@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Untuk Kamu 💌</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#edf1ff;
+  --ink:#2b2a4c;
+  --muted:#5b5a78;
+  --coral:#f78080;
+  --red:#e0525a;
+  --lav:#e6dcfb;
+  --lav-2:#d9d4f5;
+  --blue:#7f8fd9;
+  --pink:#ffd9e2;
+  --white:#fff;
+  --font:'Plus Jakarta Sans',system-ui,sans-serif;
+  --hand:'Caveat','Comic Sans MS',cursive;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--ink);background:var(--bg);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
+section{position:relative}
+
+/* ---------- progress bar atas ---------- */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--coral);z-index:50}
+
+/* ---------- hero ---------- */
+.hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 24px 120px}
+.mascot{width:min(250px,62vw);animation:float 3.6s ease-in-out infinite}
+.mascot-shadow{width:min(170px,42vw);height:14px;border-radius:50%;background:#c9d6f5;margin:6px auto 56px;animation:shadow 3.6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px)}}
+@keyframes shadow{50%{transform:scaleX(.85);opacity:.7}}
+.tag{display:inline-block;font-family:var(--hand);font-size:1.35rem;font-weight:600;padding:2px 24px 4px;border:2px dashed var(--blue);border-radius:999px;background:#fff;color:var(--ink)}
+.tag.red{border-color:#e98c93}
+h1{font-size:clamp(2rem,9vw,2.9rem);font-weight:800;line-height:1.12;letter-spacing:-.03em;margin:22px 0 14px}
+.u{background:linear-gradient(transparent 80%,transparent 0);text-decoration:underline wavy var(--red);text-decoration-thickness:2px;text-underline-offset:6px}
+.sub{color:var(--muted);font-size:1.05rem;margin-bottom:28px}
+.btn{display:inline-block;padding:18px 40px;border-radius:999px;background:var(--coral);color:var(--ink);font-weight:700;font-size:1.05rem;box-shadow:0 10px 24px rgba(247,128,128,.38);transition:transform .15s}
+.btn:active{transform:scale(.97)}
+.btn.ghost{background:#fff;box-shadow:none;border:2px solid var(--lav-2);padding:14px 36px}
+.deco{position:absolute;pointer-events:none}
+.deco.plus{color:var(--blue);font-size:2rem;font-weight:700}
+
+/* ---------- pembatas bergelombang ---------- */
+.scallop{height:30px;background:radial-gradient(circle at 20px 0,var(--sc,#fff) 19px,transparent 20px) 0 0/40px 30px repeat-x}
+.scallop.flip{transform:scaleY(-1)}
+
+/* ---------- surat ---------- */
+.letter-sec{background:#f6f4ff;padding:0 18px 70px;text-align:center}
+.letter-sec .tag{margin:54px 0 38px}
+.letter{position:relative;max-width:520px;margin:0 auto;background:linear-gradient(180deg,#fff,#fdf7fb);border:2px solid #e8e4f7;border-radius:34px;padding:40px 28px 26px;text-align:left;box-shadow:0 18px 40px rgba(120,110,190,.12)}
+.tape{position:absolute;top:-14px;width:124px;height:28px;border-radius:4px}
+.tape.p{left:40px;background:#ffc9d6;transform:rotate(-2deg)}
+.tape.v{right:30px;background:#cfc5f3;transform:rotate(2deg)}
+.stamp{position:absolute;top:18px;right:16px;border:2px dashed #ee8aa0;border-radius:18px;padding:8px 14px;text-align:center;font-family:var(--hand);font-weight:700;color:var(--red);transform:rotate(3deg);background:#fff}
+.stamp b{display:block;font-size:1.6rem;line-height:1}
+.dear{font-family:var(--hand);font-size:2.2rem;color:var(--coral);font-weight:700;line-height:1;transform:rotate(-3deg);transform-origin:left}
+.name{font-size:2.1rem;font-weight:800;letter-spacing:-.03em;margin-bottom:22px}
+.name i{color:var(--coral);font-style:normal}
+.letter p.body{font-size:1.12rem;line-height:1.75;font-weight:500}
+.hl{position:relative;margin:26px 0;padding:22px 24px;border-radius:22px;background:#fff0f1;border-left:5px solid var(--coral);font-weight:700;font-size:1.15rem;line-height:1.7}
+.hl mark{background:linear-gradient(transparent 55%,#ffc4cc 55%);color:var(--red);padding:0 4px}
+.hl .spark{position:absolute;top:-10px;right:-4px;font-size:1.4rem}
+.quote{margin:8px 0 26px;padding:22px 20px;border:2px dashed #93a3e4;border-radius:22px;background:#eaf0ff;font-family:var(--hand);font-size:1.5rem;font-weight:600;line-height:1.5;text-align:center}
+.polaroids{display:flex;gap:14px;justify-content:center;margin-bottom:6px}
+.polaroid{flex:1;max-width:190px;background:#fff;border-radius:16px;padding:12px 12px 8px;box-shadow:0 8px 20px rgba(80,70,140,.14);text-align:center;font-family:var(--hand);font-size:1.15rem;font-weight:600}
+.polaroid:nth-child(1){transform:rotate(-3deg)}
+.polaroid:nth-child(2){transform:rotate(3deg);margin-top:10px}
+.ph{aspect-ratio:1/1;border-radius:10px;background:#e6edff;margin-bottom:8px;display:grid;place-items:center;overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph svg{width:60%}
+.sign{border-top:1.5px dashed #e3def5;margin-top:22px;padding-top:14px;text-align:right;font-family:var(--hand);font-size:1.4rem;font-weight:600}
+.note{font-family:var(--hand);font-size:1.25rem;font-weight:600;margin-top:26px;line-height:1.8;padding:0 8px}
+
+/* ---------- kejujuran ---------- */
+.honest{background:var(--bg);padding:20px 24px 110px;text-align:center}
+.honest .tag{margin:60px 0 42px}
+.honest p{font-size:1.45rem;font-weight:500;line-height:1.5;color:#4b4a6b;margin-bottom:30px}
+.honest .big{font-size:2.3rem;font-weight:800;color:var(--ink);letter-spacing:-.03em}
+.honest .big mark{background:linear-gradient(transparent 55%,#ffc4cc 55%);color:inherit;padding:0 3px}
+.honest .hand{font-family:var(--hand);font-size:1.4rem;color:var(--muted)}
+
+/* ---------- satu hal terakhir ---------- */
+.final{background:var(--lav);padding:0 18px 120px;text-align:center}
+.final .scallop{--sc:var(--bg);transform:scaleY(-1) translateY(1px);margin-bottom:0}
+.card{position:relative;max-width:520px;margin:66px auto 0;background:#fff;border-radius:34px;padding:50px 24px 46px;box-shadow:0 16px 38px rgba(120,100,200,.15)}
+.card .tag{position:absolute;top:-24px;left:50%;transform:translateX(-50%);white-space:nowrap}
+.card h2{font-size:1.9rem;font-weight:800;line-height:1.25;letter-spacing:-.03em;margin:6px 0 22px}
+.card .lead{color:var(--muted);font-size:1.12rem;line-height:1.7;margin-bottom:28px}
+.jadi{font-family:var(--hand);font-size:2rem;color:var(--red);font-weight:700;display:block;margin-bottom:-4px}
+.jadi .d{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--coral);margin-left:3px;animation:blink 1.2s infinite}
+.jadi .d:nth-child(2){animation-delay:.2s}.jadi .d:nth-child(3){animation-delay:.4s}
+@keyframes blink{50%{opacity:.25}}
+.stack{display:flex;flex-direction:column;align-items:center;gap:14px}
+.mini-face{width:96px;height:96px;margin:0 auto 18px;border-radius:50%;background:#efeaff;display:grid;place-items:center;position:relative}
+.mini-face svg{width:56px}
+.mini-face .s1{position:absolute;top:-2px;left:2px;color:var(--coral);font-size:1.2rem}
+.mini-face .s2{position:absolute;top:6px;right:-2px;width:12px;height:12px;border:3px solid var(--blue);border-radius:50%}
+.hidden{display:none!important}
+.pop{animation:pop .45s cubic-bezier(.2,1.4,.4,1)}
+@keyframes pop{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}
+.foot{background:var(--bg);padding:0 24px 150px;text-align:center;border-top:2px dotted var(--lav-2);margin-top:60px}
+.wave{display:block;margin:34px auto 6px;width:150px}
+.foot .hand{font-family:var(--hand);font-size:1.5rem;font-weight:600}
+.foot p{color:var(--muted);margin-top:10px}
+
+/* ---------- tombol melayang ---------- */
+.dock{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:10px;z-index:40;align-items:flex-start}
+.pill{display:flex;align-items:center;gap:10px;padding:13px 20px;border-radius:999px;background:#fff;border:2px solid var(--lav-2);font-weight:700;font-size:1rem;box-shadow:0 8px 22px rgba(90,80,160,.18)}
+.pill.music{border-color:var(--red);background:#fff0f2}
+.eq{display:inline-flex;gap:2px;align-items:flex-end;height:16px}
+.eq i{width:3px;background:var(--red);border-radius:2px;height:5px}
+.playing .eq i{animation:eq .9s infinite ease-in-out}
+.playing .eq i:nth-child(2){animation-delay:.2s}.playing .eq i:nth-child(3){animation-delay:.4s}.playing .eq i:nth-child(4){animation-delay:.1s}
+@keyframes eq{50%{height:16px}}
+
+/* ---------- modal mini game ---------- */
+.overlay{position:fixed;inset:0;background:rgba(48,46,90,.5);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:100;display:grid;place-items:center;padding:16px;transition:opacity .3s}
+.overlay.off{opacity:0;pointer-events:none}
+.modal{width:100%;max-width:400px;background:#fff;border-radius:30px;border:2px solid var(--lav-2);overflow:hidden;box-shadow:0 24px 60px rgba(40,30,100,.3)}
+.m-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:18px 18px 14px;border-bottom:1.5px solid #f0edfa}
+.m-head .tag{font-size:1.1rem;padding:6px 16px;border-radius:999px;font-weight:600}
+.chip{padding:9px 16px;border-radius:999px;background:#eef2ff;border:1.5px solid var(--lav-2);font-weight:700;font-size:.95rem}
+.chip.on{background:#fff0f1;border-color:#f0a0a8;color:var(--red)}
+.m-head .r{display:flex;gap:8px}
+.intro{padding:6px 22px 24px;text-align:center}
+.intro .bubble-wrap{position:relative;height:150px;margin-top:6px}
+.bubble{position:absolute;top:2px;left:50%;transform:translateX(-50%) rotate(-3deg);background:#fff;border:2px solid #b8b3ea;border-radius:12px;padding:3px 18px;font-family:var(--hand);font-weight:700;font-size:1.5rem;white-space:nowrap;z-index:2}
+.intro .bubble-wrap svg{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:130px;animation:float 3s ease-in-out infinite}
+.intro h3{font-size:1.65rem;font-weight:800;letter-spacing:-.02em;margin:10px 0 8px}
+.intro p{color:var(--muted);line-height:1.6;margin-bottom:20px}
+.intro p b{color:var(--ink)}
+.musicbar{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;padding:15px;border:2px solid #e48c92;border-radius:999px;background:linear-gradient(90deg,#fde2e8,#e9e0fb);font-weight:700;margin-bottom:14px}
+.go{display:block;width:100%;padding:18px;border-radius:999px;background:var(--coral);font-weight:800;font-size:1.1rem;box-shadow:0 10px 22px rgba(247,128,128,.38);margin-bottom:12px}
+.skip{display:block;width:100%;padding:16px;border-radius:999px;background:#fff;border:2px solid var(--lav-2);font-weight:700;font-size:1.02rem}
+.game{padding:14px 16px 16px}
+.score{display:flex;align-items:center;gap:10px;margin-bottom:12px;padding:0 4px}
+.score span.l{font-family:var(--hand);font-weight:700;font-size:1.45rem}
+.score .n{background:#fff0f1;border:1.5px solid #f3b9be;color:var(--red);font-weight:800;border-radius:999px;padding:4px 14px}
+.bar{flex:1;height:12px;border-radius:99px;background:#ebe7fb;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#f7a0aa,var(--coral));border-radius:99px;transition:width .25s}
+#stage{position:relative;height:min(52vh,420px);border:2px dashed #cfc7f0;border-radius:22px;background:linear-gradient(180deg,#eef0ff,#fdeef3);overflow:hidden;touch-action:none;user-select:none}
+#stage:after{content:"";position:absolute;left:0;right:0;bottom:0;height:22px;background:radial-gradient(circle at 18px 22px,#fff 17px,transparent 18px) 0 0/36px 22px repeat-x}
+.it{position:absolute;top:0;left:0;width:44px;height:44px;will-change:transform}
+.it.heart{border-radius:50%;border:2px dashed #ee9aa3;padding:4px;background:#fff3f4}
+.it svg{width:100%;height:100%}
+#player{position:absolute;bottom:14px;left:0;width:96px;will-change:transform;z-index:2}
+#player svg{width:100%;display:block}
+.game-foot{display:flex;align-items:center;justify-content:space-between;margin-top:14px;gap:8px}
+.game-foot .tip{font-weight:600;font-size:.95rem}
+.arrows{display:flex;gap:10px}
+.arrows button{width:54px;height:46px;border-radius:16px;background:#fff;border:2px solid #ece8f8;box-shadow:0 4px 10px rgba(80,70,140,.12);font-size:1.1rem}
+.win{padding:40px 24px 34px;text-align:center}
+.win h3{font-size:1.7rem;font-weight:800;margin:14px 0 8px}
+.win p{color:var(--muted);line-height:1.6;margin-bottom:22px}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<audio id="bgm" loop preload="auto" src="lagu-kita.mp3"></audio>
+
+<!-- ============ SVG symbols ============ -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="face" viewBox="0 0 240 250">
+      <path d="M120 40 Q122 18 142 14" fill="none" stroke="#2b2a4c" stroke-width="7" stroke-linecap="round"/>
+      <ellipse cx="148" cy="14" rx="15" ry="11" fill="#cfc5f3" stroke="#2b2a4c" stroke-width="5"/>
+      <rect x="14" y="40" width="212" height="196" rx="72" fill="#fff" stroke="#2b2a4c" stroke-width="7"/>
+      <circle cx="80" cy="128" r="20" fill="#fff" stroke="#2b2a4c" stroke-width="6"/>
+      <circle cx="80" cy="128" r="9" fill="#2b2a4c"/>
+      <circle cx="160" cy="128" r="20" fill="#fff" stroke="#2b2a4c" stroke-width="6"/>
+      <circle cx="160" cy="128" r="9" fill="#2b2a4c"/>
+      <ellipse cx="52" cy="168" rx="17" ry="11" fill="#ffc9d6"/>
+      <ellipse cx="188" cy="168" rx="17" ry="11" fill="#ffc9d6"/>
+      <path d="M104 172 Q120 188 136 172" fill="none" stroke="#2b2a4c" stroke-width="6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="star" viewBox="0 0 48 48"><path d="M24 4l5.8 12.2 13.4 1.7-9.8 9.3 2.5 13.3L24 33.9 12.1 40.5l2.5-13.3-9.8-9.3 13.4-1.7z" fill="#f9c74f" stroke="#2b2a4c" stroke-width="3" stroke-linejoin="round"/></symbol>
+    <symbol id="heart" viewBox="0 0 48 48"><path d="M24 41C10 31 6 24 6 17.5 6 12 10 8.5 14.8 8.5c3.8 0 7 2.3 9.2 5.5 2.2-3.2 5.4-5.5 9.2-5.5C38 8.5 42 12 42 17.5 42 24 38 31 24 41z" fill="#e8434f" stroke="#2b2a4c" stroke-width="3" stroke-linejoin="round"/><path d="M14 17c0-2 1.5-3.5 3.5-3.5" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/></symbol>
+    <symbol id="flower" viewBox="0 0 48 48"><g fill="#ffb3c6" stroke="#2b2a4c" stroke-width="2.5"><circle cx="24" cy="12" r="8"/><circle cx="36" cy="22" r="8"/><circle cx="31" cy="36" r="8"/><circle cx="17" cy="36" r="8"/><circle cx="12" cy="22" r="8"/></g><circle cx="24" cy="26" r="7" fill="#f9c74f" stroke="#2b2a4c" stroke-width="2.5"/></symbol>
+    <symbol id="player-sym" viewBox="0 0 120 130">
+      <path d="M60 24 Q62 12 72 10" fill="none" stroke="#2b2a4c" stroke-width="3.5" stroke-linecap="round"/>
+      <circle cx="74" cy="9" r="6" fill="#e6dcfb" stroke="#2b2a4c" stroke-width="3"/>
+      <rect x="12" y="24" width="96" height="76" rx="32" fill="#fff" stroke="#2b2a4c" stroke-width="3.5"/>
+      <circle cx="42" cy="58" r="9" fill="#fff" stroke="#2b2a4c" stroke-width="3"/><circle cx="42" cy="58" r="4" fill="#2b2a4c"/>
+      <circle cx="78" cy="58" r="9" fill="#fff" stroke="#2b2a4c" stroke-width="3"/><circle cx="78" cy="58" r="4" fill="#2b2a4c"/>
+      <ellipse cx="28" cy="75" rx="8" ry="5" fill="#ffc9d6"/><ellipse cx="92" cy="75" rx="8" ry="5" fill="#ffc9d6"/>
+      <path d="M52 77 Q60 85 68 77" fill="none" stroke="#2b2a4c" stroke-width="3" stroke-linecap="round"/>
+      <rect x="22" y="88" width="76" height="24" rx="8" fill="#ffd0da" stroke="#2b2a4c" stroke-width="3"/>
+      <path d="M22 92 L60 106 L98 92" fill="none" stroke="#2b2a4c" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M56 100c0-3 4-3 4 0 0-3 4-3 4 0 0 3-4 5-4 6-0-1-4-3-4-6z" fill="#e8434f"/>
+      <circle cx="22" cy="92" r="6" fill="#fff" stroke="#2b2a4c" stroke-width="3"/><circle cx="98" cy="92" r="6" fill="#fff" stroke="#2b2a4c" stroke-width="3"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <span class="deco plus" style="top:14%;left:7%">+</span>
+  <svg class="deco" style="top:22%;right:7%;width:28px;color:#c8bff0" viewBox="0 0 24 24"><path d="M12 1l2.5 8.5L23 12l-8.5 2.5L12 23l-2.5-8.5L1 12l8.5-2.5z" fill="currentColor"/></svg>
+  <svg class="mascot" viewBox="0 0 240 250"><use href="#face"/></svg>
+  <div class="mascot-shadow"></div>
+  <span class="tag">untuk kamu</span>
+  <h1>Hey, aku punya permintaan<br><span class="u">maaf</span>.</h1>
+  <p class="sub">Tenang, masi awal jangan baper dulu</p>
+  <a class="btn" href="#letter">Klik kalau kamu kepoo →</a>
+  <svg class="deco" style="bottom:90px;right:20px;width:46px" viewBox="0 0 50 16"><path d="M2 8q6-8 12 0t12 0 12 0 10 0" fill="none" stroke="#f4a3c1" stroke-width="3" stroke-linecap="round"/></svg>
+</section>
+
+<!-- ============ SURAT ============ -->
+<div class="scallop" style="--sc:#f6f4ff;background-color:var(--bg);transform:scaleY(-1)"></div>
+<section class="letter-sec" id="letter">
+  <span class="tag">sedikit pesan untukmu 💌</span>
+  <article class="letter reveal">
+    <i class="tape p"></i><i class="tape v"></i>
+    <div class="stamp"><b>💖</b>FOR YOU</div>
+    <div class="dear">Dear</div>
+    <h2 class="name">My Love<i>.</i></h2>
+    <p class="body">aku ingin minta maaf karena udah buat kamu berpikir macem' aku engga tau kalo kamu bakal berpikiran sejauh itu. Aku minta maaf ya dd</p>
+    <div class="hl"><span class="spark">✨</span>Terima kasih karna kamu sudah jadi bagian <mark> indah</mark> dalam hidupku.</div>
+    <div class="quote">"Look at this beautiful, sweet, charming, and breathtaking girl here"</div>
+    <div class="polaroids">
+      <figure class="polaroid">
+        <div class="ph"><img src="fotoku1.jpg.jpeg" alt=""0 0 60 50"><circle cx="46" cy="12" r="6" fill="#ff9b8f"/><path d="M4 44c6-16 14-16 20 0z" fill="#c9b8f2"/><path d="M20 44c6-12 12-12 18 0z" fill="#b7a7ea"/></svg>
+        </div>hay cantik 🌸
+      </figure>
+      <figure class="polaroid">
+        <div class="ph"><img src="fotoku2.jpg.jpeg" alt=""0 0 60 50"><path d="M12 22q9-10 18 0t18 0" fill="none" stroke="#7f8fd9" stroke-width="3" stroke-linecap="round"/><use href="#heart" x="22" y="26" width="16" height="16"/></svg>
+        </div>senyum manis ✨
+      </figure>
+    </div>
+    <div class="sign">dibuat dengan jujur &amp; tulus 💌</div>
+  </article>
+  <p class="note reveal">semua kata ini beneran dari hati, nggak ada yang dibuat-buat.</p>
+</section>
+
+<!-- ============ KEJUJURAN ============ -->
+<section class="honest">
+  <span class="tag">sedikit kejujuran</span>
+  <p class="reveal">Aku nggak ngebela diri akuu</p>
+  <p class="reveal">Tapi disini aku mau mengajukan permintaan maaf</p>
+  <p class="big reveal">Maaf<mark>ddd</mark> .</p>
+  <p class="hand reveal">itu aja sih intinya.</p>
+</section>
+
+<!-- ============ SATU HAL TERAKHIR ============ -->
+<section class="final">
+  <div class="scallop" style="--sc:var(--bg)"></div>
+  <div class="card" id="ask">
+    <div id="ask-q">
+      <span class="jadi">Jadi<span class="d"></span><span class="d"></span><span class="d"></span></span>
+      <h2>Kalau kita coba <span class="u">ngobrol</span> lagi?</h2>
+      <p class="lead">Yaa?? Jangan marah lagii plsss<br>Yuuu yuuu pulsek ngobrol tapi jika lelah tak apa pulang aja, kan aku rumah kamuu</p>
+      <div class="stack">
+<!-- ============ TOMBOL MELAYANG ============ -->
+<div class="dock">
+  <button class="pill music" id="dockMusic" aria-label="Putar atau jeda lagu">🎶 Lagu Favoritmu 🎶 <span class="eq"><i></i><i></i><i></i><i></i></span></button>
+  <button class="pill" id="dockGame">🎮 Mini Game</button>
+</div>
+
+<!-- ============ MODAL MINI GAME ============ -->
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <div class="m-head">
+      <span class="tag">Mini Game ✨</span>
+      <div class="r">
+        <button class="chip" id="mPause">🎶 Jeda</button>
+        <button class="chip" id="mSkip">Lewati ✕</button>
+      </div>
+    </div>
+
+    <div class="intro" id="intro">
+      <div class="bubble-wrap">
+        <div class="bubble">hai! mau main? ✨</div>
+        <svg viewBox="0 0 240 250"><use href="#face"/></svg>
+      </div>
+      <h3>Tangkap Kenangan Jatuh!</h3>
+      <p>Ada kenangan manis yang berjatuhan dari langit.<br>Bantu si kecil menangkap <b>10 objek</b> ya! 💖</p>
+      <div class="musicbar" id="musicbar">🎶 Lagu favorit sedang diputar ⏸️ <span class="eq"><i></i><i></i><i></i><i></i></span></div>
+      <button class="go" id="start">Mulai Main 🎮</button>
+      <button class="skip" id="read">Langsung Baca Pesan 🕊️</button>
+    </div>
+
+    <div class="game hidden" id="game">
+      <div class="score"><span class="l">Terkumpul:</span><span class="n" id="count">0 / 10</span><div class="bar"><i id="fill"></i></div></div>
+      <div id="stage">
+        <div id="player"><svg viewBox="0 0 120 130"><use href="#player-sym"/></svg></div>
+      </div>
+      <div class="game-foot">
+        <span class="tip">💡 Geser layar / sentuh / tombol panah</span>
+        <div class="arrows"><button id="left" aria-label="Kiri">◀</button><button id="right" aria-label="Kanan">▶</button></div>
+      </div>
+    </div>
+
+    <div class="win hidden" id="win">
+      <svg viewBox="0 0 240 250" style="width:110px"><use href="#face"/></svg>
+      <h3>Yeay, semua tertangkap! 💖</h3>
+      <p>Makasih udah mau main sebentar.<br>Sekarang waktunya baca pesannya ya.</p>
+      <button class="go" id="winRead">Baca Pesan 🕊️</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const bgm = $('bgm');
+  const TARGET = 10;
+
+  /* ---------- progress scroll ---------- */
+  const prog = $('progress');
+  addEventListener('scroll', () => {
+    const h = document.documentElement.scrollHeight - innerHeight;
+    prog.style.width = (h > 0 ? scrollY / h * 100 : 0) + '%';
+  }, {passive:true});
+
+  /* ---------- reveal ---------- */
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.2});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* ---------- musik ---------- */
+  let playing = false;
+  function syncMusicUI() {
+    $('dockMusic').classList.toggle('playing', playing);
+    $('musicbar').classList.toggle('playing', playing);
+    $('mPause').classList.toggle('on', playing);
+    $('mPause').textContent = playing ? '🎶 Jeda' : '🎶 Putar';
+    $('musicbar').firstChild.textContent = playing ? '🎶 Lagu favorit sedang diputar ⏸️ ' : '🎶 Lagu favorit dijeda ▶️ ';
+  }
+  async function playMusic() {
+    try { await bgm.play(); playing = true; } catch { playing = false; }
+    syncMusicUI();
+  }
+  function pauseMusic() { bgm.pause(); playing = false; syncMusicUI(); }
+  const toggleMusic = () => playing ? pauseMusic() : playMusic();
+  $('dockMusic').onclick = toggleMusic;
+  $('mPause').onclick = toggleMusic;
+  $('musicbar').onclick = toggleMusic;
+  // browser memblokir autoplay -> mulai pada interaksi pertama
+  addEventListener('pointerdown', function first() { if (!playing) playMusic(); removeEventListener('pointerdown', first); }, {once:true});
+
+  /* ---------- modal ---------- */
+  const overlay = $('overlay');
+  const views = {intro:$('intro'), game:$('game'), win:$('win')};
+  function show(name) { for (const k in views) views[k].classList.toggle('hidden', k !== name); }
+  function openModal(view) { overlay.classList.remove('off'); show(view); }
+  function closeModal() { overlay.classList.add('off'); stopGame(); }
+  $('dockGame').onclick = () => { openModal('intro'); };
+  $('mSkip').onclick = closeModal;
+  $('read').onclick = () => { closeModal(); $('letter').scrollIntoView({behavior:'smooth'}); };
+  $('winRead').onclick = () => { closeModal(); $('letter').scrollIntoView({behavior:'smooth'}); };
+  $('start').onclick = () => { show('game'); startGame(); if (!playing) playMusic(); };
+
+  /* ---------- game ---------- */
+  const stage = $('stage'), player = $('player');
+  let W = 0, H = 0, px = 0, score = 0, raf = 0, last = 0, spawnT = 0, items = [], running = false;
+  const PW = 96;
+
+  function setPlayer(x) {
+    px = Math.max(0, Math.min(W - PW, x));
+    player.style.transform = `translateX(${px}px)`;
+  }
+  function updateScore() {
+    $('count').textContent = `${score} / ${TARGET}`;
+    $('fill').style.width = (score / TARGET * 100) + '%';
+  }
+  function spawn() {
+    const kinds = ['star','heart','heart','flower'];
+    const k = kinds[Math.floor(Math.random() * kinds.length)];
+    const el = document.createElement('div');
+    el.className = 'it ' + k;
+    el.innerHTML = `<svg viewBox="0 0 48 48"><use href="#${k}"/></svg>`;
+    stage.appendChild(el);
+    items.push({el, x: 8 + Math.random() * (W - 60), y: -50, v: 90 + Math.random() * 70, r: (Math.random() - .5) * 40});
+  }
+  function frame(t) {
+    if (!running) return;
+    const dt = Math.min(.05, (t - last) / 1000 || 0); last = t;
+    spawnT -= dt;
+    if (spawnT <= 0 && items.length < 4) { spawn(); spawnT = .85 + Math.random() * .5; }
+    for (let i = items.length - 1; i >= 0; i--) {
+      const it = items[i];
+      it.y += it.v * dt;
+      it.el.style.transform = `translate(${it.x}px,${it.y}px) rotate(${it.y * it.r / 100}deg)`;
+      const cx = it.x + 22, bottom = it.y + 40;
+      const top = H - 14 - 70;
+      if (bottom >= top && it.y < H - 30 && cx > px + 8 && cx < px + PW - 8) {
+        it.el.remove(); items.splice(i, 1);
+        score++; updateScore(); bump();
+        if (score >= TARGET) return finish();
+      } else if (it.y > H) { it.el.remove(); items.splice(i, 1); }
+    }
+    raf = requestAnimationFrame(frame);
+  }
+  function bump() { player.animate([{transform:`translateX(${px}px) scale(1)`},{transform:`translateX(${px}px) scale(1.08,.94)`},{transform:`translateX(${px}px) scale(1)`}], {duration:160}); }
+  function startGame() {
+    stopGame();
+    W = stage.clientWidth; H = stage.clientHeight;
+    score = 0; updateScore(); setPlayer((W - PW) / 2);
+    running = true; last = performance.now(); spawnT = .2;
+    raf = requestAnimationFrame(frame);
+  }
+  function stopGame() {
+    running = false; cancelAnimationFrame(raf);
+    items.forEach(i => i.el.remove()); items = [];
+  }
+  function finish() { stopGame(); setTimeout(() => show('win'), 250); }
+
+  // kontrol: geser/sentuh
+  const move = e => { const r = stage.getBoundingClientRect(); setPlayer(e.clientX - r.left - PW / 2); };
+  stage.addEventListener('pointerdown', e => { stage.setPointerCapture(e.pointerId); move(e); });
+  stage.addEventListener('pointermove', e => { if (e.buttons || e.pointerType === 'touch') move(e); });
+  // kontrol: tombol panah layar
+  let hold = 0;
+  const bindArrow = (id, dir) => {
+    const b = $(id);
+    const go = () => setPlayer(px + dir * 14);
+    b.addEventListener('pointerdown', e => { e.preventDefault(); go(); hold = setInterval(go, 40); });
+    ['pointerup','pointerleave','pointercancel'].forEach(ev => b.addEventListener(ev, () => clearInterval(hold)));
+  };
+  bindArrow('left', -1); bindArrow('right', 1);
+  // kontrol: keyboard
+  addEventListener('keydown', e => {
+    if (!running) return;
+    if (e.key === 'ArrowLeft') setPlayer(px - 28);
+    if (e.key === 'ArrowRight') setPlayer(px + 28);
+  });
+  addEventListener('resize', () => { if (running) { W = stage.clientWidth; H = stage.clientHeight; setPlayer(px); } });
+
+  /* ---------- pertanyaan terakhir ---------- */
+  const q = $('ask-q'), yes = $('ask-yes'), no = $('ask-no');
+  const swap = el => { [q, yes, no].forEach(x => x.classList.add('hidden')); el.classList.remove('hidden'); el.classList.add('pop'); };
+  $('yes').onclick = () => swap(yes);
+  $('no').onclick = () => swap(no);
+  $('back').onclick = () => swap(q);
+
+  syncMusicUI();
+})();
+</script>
+</body>
+</html>
